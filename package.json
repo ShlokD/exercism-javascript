@@ -1,0 +1,29 @@
+{
+  "name": "exercism-javascript",
+  "version": "1.0.0",
+  "description": "Exercism solutions in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShlokD/exercism-javascript.git"
+  },
+  "keywords": [
+    "javascript",
+    "programming",
+    "problems",
+    "functional",
+    "programming"
+  ],
+  "author": "Shlok Desai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShlokD/exercism-javascript/issues"
+  },
+  "homepage": "https://github.com/ShlokD/exercism-javascript#readme",
+  "dependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
