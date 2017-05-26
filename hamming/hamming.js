@@ -14,7 +14,7 @@ Hamming.prototype.compute = function(first, second) {
     }
   }
 
-  return hammingCode;
+  return hammingCode
 
 
 }
