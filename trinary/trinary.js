@@ -10,7 +10,6 @@ class Trinary {
     }
     return 0;
   }
-
 }
 
 module.exports = Trinary;
