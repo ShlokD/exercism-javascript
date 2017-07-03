@@ -1,5 +1,5 @@
 class SpaceAge {
-  constructor(age) {
+  constructor (age) {
     this.seconds = age
     this.mercuryAge = 0.2408467
     this.venusAge = 0.61519726
@@ -10,47 +10,45 @@ class SpaceAge {
     this.neptuneAge = 164.79132
   }
 
-  formatAge(age) {
+  formatAge (age) {
     return parseFloat(age.toFixed(2))
   }
 
-  getEarthAge() {
+  getEarthAge () {
     return this.seconds / 31557600
   }
 
-  onEarth() {
+  onEarth () {
     return this.formatAge(this.getEarthAge())
   }
 
-  onMercury() {
+  onMercury () {
     return this.formatAge(this.getEarthAge() / this.mercuryAge)
   }
 
-  onVenus() {
+  onVenus () {
     return this.formatAge(this.getEarthAge() / this.venusAge)
   }
 
-  onMars() {
+  onMars () {
     return this.formatAge(this.getEarthAge() / this.marsAge)
   }
 
-  onJupiter() {
+  onJupiter () {
     return this.formatAge(this.getEarthAge() / this.jupiterAge)
   }
 
-  onSaturn() {
+  onSaturn () {
     return this.formatAge(this.getEarthAge() / this.saturnAge)
   }
 
-  onUranus() {
+  onUranus () {
     return this.formatAge(this.getEarthAge() / this.uranusAge)
   }
 
-  onNeptune() {
+  onNeptune () {
     return this.formatAge(this.getEarthAge() / this.neptuneAge)
   }
 }
-
-
 
 module.exports = SpaceAge

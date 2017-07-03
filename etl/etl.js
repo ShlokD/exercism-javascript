@@ -1,5 +1,5 @@
 class ETL {
-  transform(pointsToLetterMap) {
+  transform (pointsToLetterMap) {
     const letterToPointsMap = {};
     Object.keys(pointsToLetterMap).forEach((point) => {
       const letters = pointsToLetterMap[point]

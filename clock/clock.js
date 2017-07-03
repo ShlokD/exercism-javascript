@@ -1,61 +1,61 @@
 class Clock {
-  padZero(num) {
-    return num < 10 ? "0"+num : ""  + num;
+  padZero (num) {
+    return num < 10 ? '0' + num : '' + num;
   }
 
-  getHours(hour) {
+  getHours (hour) {
     const referenceHour = hour % 24 >= 0 ? 0 : 24;
-    const currentHour  = hour % 24 + referenceHour;
+    const currentHour = hour % 24 + referenceHour;
     return this.padZero(currentHour);
   }
 
-  getMinutes(minutes) {
+  getMinutes (minutes) {
     const referenceMinute = minutes >= 0 ? 0 : 60;
     const currentMinute = minutes % 60 + referenceMinute;
     return this.padZero(currentMinute);
   }
 
-  getHoursFromMinutes(minutes) {
+  getHoursFromMinutes (minutes) {
     return Math.floor(minutes / 60);
   }
 }
 
 class At {
-  constructor(hours, minutes) {
+  constructor (hours, minutes) {
     this.clock = new Clock();
     this.setMinutes(minutes);
     this.setHours(hours);
   }
 
-  setMinutes(minutes, addMinutes = 0) {
+  setMinutes (minutes, addMinutes = 0) {
     this.minutes = minutes + addMinutes;
   }
 
-  setHours(hours) {
+  setHours (hours) {
     const hoursFromMinutes = this.clock.getHoursFromMinutes(this.minutes);
     this.hours = hours + hoursFromMinutes;
   }
 
-  toString() {
+  toString () {
     this.hourString = this.clock.getHours(this.hours);
     this.minuteString = this.clock.getMinutes(this.minutes).toString();
-    return this.hourString.concat(":").concat(this.minuteString);
+    return this.hourString.concat(':').concat(this.minuteString);
   }
 
-  plus(addMinutes) {
+  plus (addMinutes) {
     this.setMinutes(this.minutes, addMinutes);
     this.setHours(this.hours);
     return this.toString();
   }
 
-  minus(removeMinutes) {
+  minus (removeMinutes) {
     this.setMinutes(this.minutes, 0 - removeMinutes);
     this.setHours(this.hours);
     return this.toString();
   }
 
-  equals(time) {
-    return this.toString() == time;
+  equals (time) {
+    return this.toString() === time;
   }
 }
 

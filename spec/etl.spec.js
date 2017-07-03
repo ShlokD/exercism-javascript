@@ -1,30 +1,30 @@
 var ETL = require('../etl/etl.js');
 
-describe('Transform', function() {
+describe('Transform', function () {
   var etl = new ETL();
 
-  it('transforms one value', function() {
+  it('transforms one value', function () {
     var old = { 1: ['A'] };
     var expected = { a: 1 };
 
     expect(etl.transform(old)).toEqual(expected);
   });
 
-  it('transforms more values', function() {
+  it('transforms more values', function () {
     var old = { 1: ['A', 'E', 'I', 'O', 'U'] };
     var expected = { a: 1, e: 1, i: 1, o: 1, u: 1 };
 
     expect(etl.transform(old)).toEqual(expected);
   });
 
-  it('transforms more keys', function() {
+  it('transforms more keys', function () {
     var old = { 1: ['A', 'E'], 2: ['D', 'G'] };
     var expected = { a: 1, e: 1, d: 2, g: 2 };
 
     expect(etl.transform(old)).toEqual(expected);
   });
 
-  it('transforms a full dataset', function() {
+  it('transforms a full dataset', function () {
     var old = {
       1: [ 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T' ],
       2: [ 'D', 'G' ],
@@ -35,15 +35,34 @@ describe('Transform', function() {
       10: [ 'Q', 'Z' ]
     };
     var expected = {
-      a: 1, b: 3,  c: 3, d: 2, e: 1,
-      f: 4, g: 2,  h: 4, i: 1, j: 8,
-      k: 5, l: 1,  m: 3, n: 1, o: 1,
-      p: 3, q: 10, r: 1, s: 1, t: 1,
-      u: 1, v: 4,  w: 4, x: 8, y: 4,
+      a: 1,
+      b: 3,
+      c: 3,
+      d: 2,
+      e: 1,
+      f: 4,
+      g: 2,
+      h: 4,
+      i: 1,
+      j: 8,
+      k: 5,
+      l: 1,
+      m: 3,
+      n: 1,
+      o: 1,
+      p: 3,
+      q: 10,
+      r: 1,
+      s: 1,
+      t: 1,
+      u: 1,
+      v: 4,
+      w: 4,
+      x: 8,
+      y: 4,
       z: 10
     };
 
     expect(etl.transform(old)).toEqual(expected);
   });
-
 });

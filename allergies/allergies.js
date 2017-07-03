@@ -1,24 +1,24 @@
 const allergyList = [
-   "eggs",
-   "peanuts",
-   "shellfish",
-   "strawberries",
-   "tomatoes",
-   "chocolate",
-   "pollen",
-   "cats"
-]
+  'eggs',
+  'peanuts',
+  'shellfish',
+  'strawberries',
+  'tomatoes',
+  'chocolate',
+  'pollen',
+  'cats'
+];
 
 class Allergies {
-  constructor(allergyRank) {
+  constructor (allergyRank) {
     this.rank = allergyRank % 256;
   }
 
-  list() {
+  list () {
     return allergyList.filter((item) => this.allergicTo(item));
   }
 
-  allergicTo(item) {
+  allergicTo (item) {
     const index = allergyList.indexOf(item);
     return (this.rank & Math.pow(2, index)) !== 0
   }

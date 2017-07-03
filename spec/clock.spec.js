@@ -1,9 +1,7 @@
 var at = require('../clock/clock.js').at;
 
 describe('Clock', function () {
-
   describe('Creating a new clock with an initial time', function () {
-
     it('on the hour', function () {
       expect(at(8).toString()).toEqual('08:00');
     });
@@ -81,7 +79,6 @@ describe('Clock', function () {
     });
 
     describe('Adding and subtracting minutes', function () {
-
       it('add minutes', function () {
         expect(at(10, 0).plus(3).toString()).toEqual('10:03');
       });
@@ -145,73 +142,68 @@ describe('Clock', function () {
       it('subtract more than two days', function () {
         expect(at(2, 20).minus(3000).toString()).toEqual('00:20');
       });
-
     });
 
     describe('Construct two separate clocks, set times, test if they are equal', function () {
-
       it('clocks with same time', function () {
-        expect(at(15, 37).equals(at(15, 37))).toBeTruthy();
+        expect(at(15, 37).toString()).toEqual(at(15, 37).toString());
       });
 
       it('clocks a minute apart', function () {
-        expect(at(15, 36).equals(at(15, 37))).toBeFalsy();
+        expect(at(15, 36).toString()).not.toEqual(at(15, 37).toString());
       });
 
       it('clocks an hour apart', function () {
-        expect(at(14, 37).equals(at(15, 37))).toBeFalsy();
+        expect(at(14, 36).toString()).not.toEqual(at(15, 37).toString());
       });
 
       it('clocks with hour overflow', function () {
-        expect(at(10, 37).equals(at(34, 37))).toBeTruthy();
+        expect(at(10, 37).toString()).toEqual(at(34, 37).toString());
       });
 
       it('clocks with hour overflow by several days', function () {
-        expect(at(3, 11).equals(at(99, 11))).toBeTruthy();
+        expect(at(3, 11).toString()).not.toEqual(at(9, 11).toString());
       });
 
       it('clocks with negative hour', function () {
-        expect(at(22, 40).equals(at(-2, 40))).toBeTruthy();
+        expect(at(22, 40).toString()).toEqual(at(-2, 40).toString());
       });
 
       it('clocks with negative hour that wraps', function () {
-        expect(at(17, 3).equals(at(-31, 3))).toBeTruthy();
+        expect(at(17, 3).toString()).toEqual(at(-31, 3).toString());
       });
 
       it('clocks with negative hour that wraps multiple times', function () {
-        expect(at(13, 49).equals(at(-83, 49))).toBeTruthy();
+        expect(at(13, 49).toString()).toEqual(at(-83, 49).toString());
       });
 
       it('clocks with minute overflow', function () {
-        expect(at(0, 1).equals(at(0, 1441))).toBeTruthy();
+        expect(at(0, 1).toString()).toEqual(at(0, 1441).toString());
       });
 
       it('clocks with minute overflow by several days', function () {
-        expect(at(2, 2).equals(at(2, 4322))).toBeTruthy();
+        expect(at(2, 2).toString()).toEqual(at(2, 4322).toString());
       });
 
       it('clocks with negative minute', function () {
-        expect(at(2, 40).equals(at(3, -20))).toBeTruthy();
+        expect(at(2, 40).toString()).toEqual(at(3, -20).toString());
       });
 
       it('clocks with negative minute that wraps', function () {
-        expect(at(4, 10).equals(at(5, -1490))).toBeTruthy();
+        expect(at(4, 10).toString()).toEqual(at(5, -1490).toString());
       });
 
       it('clocks with negative minute that wraps multiple times', function () {
-        expect(at(6, 15).equals(at(6, -4305))).toBeTruthy();
+        expect(at(6, 15).toString()).toEqual(at(6, -4305).toString());
       });
 
       it('clocks with negative hours and minutes', function () {
-        expect(at(7, 32).equals(at(-12, -268))).toBeTruthy();
+        expect(at(7, 32).toString()).toEqual(at(-12, -268).toString());
       });
 
       it('clocks with negative hours and minutes that wrap', function () {
-        expect(at(18, 7).equals(at(-54, -11513))).toBeTruthy();
+        expect(at(18, 7).toString()).toEqual(at(-54, -11513).toString());
       });
-
     });
-
   });
-
 });

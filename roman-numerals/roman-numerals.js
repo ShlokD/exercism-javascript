@@ -14,14 +14,14 @@ const toRoman = number => {
     'IV': 4,
     'I': 1
   }
-  let romanNumeral = "";
-  for(numeral in numeralsMap) {
+  let romanNumeral = '';
+  let numeral = '';
+  for (numeral in numeralsMap) {
     while (number >= numeralsMap[numeral]) {
       romanNumeral += numeral;
       number -= numeralsMap[numeral]
     }
   }
-
   return romanNumeral;
 }
 
