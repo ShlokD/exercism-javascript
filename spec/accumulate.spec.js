@@ -1,14 +1,13 @@
 var accumulate = require('../accumulate/accumulate.js');
 
-describe('accumulate()', function() {
-
-  it('accumulation empty', function() {
-    var accumulator = function(e) { return e * e; };
+describe('accumulate()', function () {
+  it('accumulation empty', function () {
+    var accumulator = function (e) { return e * e; };
     expect(accumulate([], accumulator)).toEqual([]);
   });
 
-  it('accumulate squares', function() {
-    var accumulator = function(number) {
+  it('accumulate squares', function () {
+    var accumulator = function (number) {
       return number * number;
     };
 
@@ -17,8 +16,8 @@ describe('accumulate()', function() {
     expect(result).toEqual([1, 4, 9]);
   });
 
-  it('accumulate upcases', function() {
-    var accumulator = function(word) {
+  it('accumulate upcases', function () {
+    var accumulator = function (word) {
       return word.toUpperCase();
     };
 
@@ -27,8 +26,8 @@ describe('accumulate()', function() {
     expect(result).toEqual(['HELLO', 'WORLD']);
   });
 
-  it('accumulate reversed strings', function() {
-    var accumulator = function(word) {
+  it('accumulate reversed strings', function () {
+    var accumulator = function (word) {
       return word.split('').reverse().join('');
     };
 
@@ -37,14 +36,13 @@ describe('accumulate()', function() {
     expect(result).toEqual(['eht', 'kciuq', 'nworb', 'xof', 'cte']);
   });
 
-  it('accumulate recursively', function() {
-    var result = accumulate('a b c'.split(/\s/), function(char) {
-      return accumulate('1 2 3'.split(/\s/), function(digit) {
+  it('accumulate recursively', function () {
+    var result = accumulate('a b c'.split(/\s/), function (char) {
+      return accumulate('1 2 3'.split(/\s/), function (digit) {
         return char + digit;
       });
     });
 
     expect(result).toEqual([['a1', 'a2', 'a3'], ['b1', 'b2', 'b3'], ['c1', 'c2', 'c3']]);
   });
-
 });

@@ -1,5 +1,2 @@
-const accumalate = (collection, reducer) => {
-  return collection.map((value) => reducer(value));
-}
-
+const accumalate = (collection, reducer) => collection.map((value) => reducer(value))
 module.exports = accumalate;
