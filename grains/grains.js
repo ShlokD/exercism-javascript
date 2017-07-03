@@ -1,19 +1,19 @@
 const BigInt = require('./big-integer.js')
 
 class Grains {
-  constructor() {
+  constructor () {
     this.base = BigInt(2);
   }
 
-  exp(num) {
+  exp (num) {
     return this.base.pow(num - 1)
   }
 
-  square(num) {
+  square (num) {
     return this.exp(num).toString();
   }
 
-  total() {
+  total () {
     return this.exp(65).add(-1).toString();
   }
 }

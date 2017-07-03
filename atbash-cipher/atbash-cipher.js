@@ -7,14 +7,10 @@ const clean = (sentence) => {
 
 const encode = (sentence) => {
   const cleanSentence = clean(sentence);
-  return cleanSentence
-          .split('')
-          .map((letter, index) => {
-          const transposeLetter = transpose[alphabets.indexOf(letter)]  || letter;
-          return index % 5 ? transposeLetter : " "+transposeLetter;
-          })
-          .join('')
-          .trim();
+  return cleanSentence.split('').map((letter, index) => {
+    const transposeLetter = transpose[alphabets.indexOf(letter)] || letter;
+    return index % 5 ? transposeLetter : ' ' + transposeLetter;
+  }).join('').trim();
 };
 
 const atbashCipher = {

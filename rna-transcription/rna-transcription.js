@@ -1,7 +1,7 @@
-var DnaTranscriber = function(){}
+var DnaTranscriber = function () {}
 
-DnaTranscriber.prototype.toRna = function(rnaString) {
-  if(!rnaString.match(/^[ACGT]+$/)) {
+DnaTranscriber.prototype.toRna = function (rnaString) {
+  if (!rnaString.match(/^[ACGT]+$/)) {
     throw new Error('Invalid input')
   }
 
@@ -12,7 +12,7 @@ DnaTranscriber.prototype.toRna = function(rnaString) {
     'T': 'A'
   }
 
-  return rnaString.split('').map(function(elem) {
+  return rnaString.split('').map(function (elem) {
     return mapping[elem]
   }).join('');
 }
