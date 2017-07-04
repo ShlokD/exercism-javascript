@@ -1,8 +1,7 @@
 
-
-var FoodChain = function() {
-  this.versesMap  = {};
-  this.versesMap[1] =  'I know an old lady who swallowed a fly.\nI don\'t know why she swallowed the fly. Perhaps she\'ll die.\n'
+var FoodChain = function () {
+  this.versesMap = {};
+  this.versesMap[1] = 'I know an old lady who swallowed a fly.\nI don\'t know why she swallowed the fly. Perhaps she\'ll die.\n'
   this.versesMap[2] = 'I know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\n' +
     'She swallowed the spider to catch the fly.\n' + 'I don\'t know why she swallowed the fly. Perhaps she\'ll die.\n';
   this.versesMap[3] = 'I know an old lady who swallowed a bird.\n' +
@@ -47,14 +46,14 @@ var FoodChain = function() {
   this.versesMap[8] = 'I know an old lady who swallowed a horse.\n' + 'She\'s dead, of course!\n'
 }
 
-FoodChain.prototype.verse = function(number) {
+FoodChain.prototype.verse = function (number) {
   return this.versesMap[number]
 }
 
-FoodChain.prototype.verses = function(start, end) {
-  var verses = "";
-  for(var i = start; i <= end; ++i) {
-    verses = verses.concat(this.versesMap[i]).concat("\n")
+FoodChain.prototype.verses = function (start, end) {
+  var verses = '';
+  for (var i = start; i <= end; ++i) {
+    verses = verses.concat(this.versesMap[i]).concat('\n')
   }
 
   return verses;

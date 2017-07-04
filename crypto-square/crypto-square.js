@@ -1,28 +1,28 @@
 class Crypto {
-  constructor(text) {
+  constructor (text) {
     this.text = text;
   }
 
-  normalizePlaintext() {
+  normalizePlaintext () {
     return this.text.toLowerCase().replace(/[^a-z0-9]/g, '');
   }
 
-  size() {
+  size () {
     return Math.ceil(Math.sqrt(this.normalizePlaintext().length));
   }
 
-  plaintextSegments() {
+  plaintextSegments () {
     const size = this.size();
     return this.normalizePlaintext().match(new RegExp(`.{1,${size}}`, 'g'));
   }
 
-  ciphertext() {
+  ciphertext () {
     const chunks = this.plaintextSegments();
     const size = this.size();
-    let cipherText = "";
-    for(let i = 0; i < chunks.length; ++i) {
-      for ( let j = 0; j < size; ++j ) {
-        cipherText = cipherText.concat(chunks[j][i] || "")
+    let cipherText = '';
+    for (let i = 0; i < chunks.length; ++i) {
+      for (let j = 0; j < size; ++j) {
+        cipherText = cipherText.concat(chunks[j][i] || '')
       }
     }
     return cipherText;
