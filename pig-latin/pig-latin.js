@@ -9,14 +9,13 @@ const isQu = (word, i) => {
 
 const pigLatinize = (word) => {
   let i = 0;
-  for(i = 0; i < word.length; ++i) {
+  for (i = 0; i < word.length; ++i) {
     if (isQu(word, i)) {
-     continue;
-   } else if(isVowel(word[i])) {
+      continue;
+    } else if (isVowel(word[i])) {
       break;
     }
   }
-
   return word.substr(i, word.length) + word.substr(0, i) + suffix;
 }
 
