@@ -1,7 +1,6 @@
 var Squares = require('../difference-of-squares/square-diff.js');
 
 describe('Squares', function () {
-
   describe('up to 5', function () {
     var squares = new Squares(5);
 
