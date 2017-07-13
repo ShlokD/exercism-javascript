@@ -67,7 +67,7 @@ describe('Proverb Test Suite', function () {
      'And all for the want of a horseshoe nail.');
     });
 
-  xit('tests the proverb is the same each time', function () {
+  it('tests the proverb is the same each time', function () {
     var proverb = new Proverb('nail', 'shoe');
 
     expect(proverb.toString()).toEqual(proverb.toString());
