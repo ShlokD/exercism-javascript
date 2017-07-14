@@ -1,7 +1,6 @@
 var Series = require('../largest-series-product/lsp.js');
 
 describe('Series', function () {
-
   it('can get the largest product of 2', function () {
     expect(new Series('0123456789').largestProduct(2)).toBe(72);
   });
@@ -35,7 +34,7 @@ describe('Series', function () {
     expect(new Series('99099').largestProduct(3)).toBe(0);
   });
 
-  it('rejects invalid character in input', ()=> {
+  it('rejects invalid character in input', () => {
     expect(function () {
       new Series('1234a5').largestProduct('2')
     }).toThrow(new Error('Invalid input.'));
